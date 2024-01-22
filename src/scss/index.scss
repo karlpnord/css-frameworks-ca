@@ -1,1 +1,28 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+.connectify-info-bg {
+   background-image: url("/images/756713527745.jpg");
+   background-repeat: none;
+   background-size: cover;
+}
+
+.connectify-login {
+   background-image: url("/images/spikes.webp");
+   background-repeat: none;
+   background-size: cover;
+}
+
+.connectify-info {
+   background: rgba($black,  0.8);
+}
+
+hr {
+   opacity: 1;
+}

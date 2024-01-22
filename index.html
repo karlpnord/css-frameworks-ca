@@ -4,10 +4,58 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Connectify - Login</title>
+   <link rel="stylesheet" href="/dist/css/index.css">
+   <script defer src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="https://kit.fontawesome.com/801ba823f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <main>
-      <h1>Connectify</h1>
-   </main>
+   <main class="container-fluid min-vh-100 bg-primary">
+      <div class="py-5 px-4 row">
+         <div class="connectify-info-bg bg-secondary py-4 px-3 col-12 col-md-6">
+            <div class="connectify-info text-light p-3 rounded-3">
+               <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-globe fa-2xl"></i>
+                  <h1>Connectify</h1>
+               </div>
+               <hr class="my-1 border-2"/>
+               <div>
+                  <h2 class="h4 mt-4">Your Voice, Your Space</h2>
+                  <p class="fs-6 text-white text-opacity-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus itaque iure reiciendis necessitatibus. Quod quis tempora numquam distinctio esse! Eos, dolorem consequuntur. Ab cupiditate, sed quod exercitationem debitis accusantium odio.</p>
+               </div>
+               <div>
+                  <h3 class="h6 text-white text-opacity-75">Dont have an account?</h3>
+                  <a href="#" class="d-flex align-items-center link-offset-3">
+                     <span class="h5 me-2">Sign Up</span>
+                     <i class="fa-solid fa-arrow-right fa-xl"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <div class="connectify-login col-12 col-md-6 py-4 px-4 d-flex flex-column gap-3">
+            <h2>Sign in</h2>
+            <form>
+               <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingUsername" placeholder="Username">
+                  <label for="floatingUsername">Username</label>
+                </div>
+               <div class="form-floating">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+               </div>
+            </form>
+            <div class="d-flex flex-column gap-3 mt-3">
+               <button class="btn btn-primary w-100">
+                  <span>Login</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+               </button>
+               <span class="text-center">or</span>
+               <button class="btn btn-outline-dark w-100">
+                  <i class="fa-brands fa-google"></i>
+                  <span>Continue with Google</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </main>   
 </body>
 </html>
