@@ -1,22 +1,43 @@
 @import "../../node_modules/bootstrap/scss/functions";
+
 @import "variables";
+@import "navbar";
+@import "buttons";
+
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.feed-create-info {
+   background-image: url("/images/spikes.webp");
+   background-repeat: none;
+   background-size: cover;
+
+   &-post {
+      height: 160px !important;
+   }
+}
 
 .connectify-info-bg {
    background-image: url("/images/756713527745.jpg");
    background-repeat: none;
    background-size: cover;
+
+   @include media-breakpoint-up(md) {
+      border-radius: $border-radius-lg 0 0 $border-radius-lg !important;
+   }
 }
 
-.connectify-login {
-   background-image: url("/images/spikes.webp");
-   background-repeat: none;
-   background-size: cover;
+.connectify-login-bg {
+   @extend .feed-create-info;
+
+   @include media-breakpoint-up(md) {
+      border-radius: 0 $border-radius-lg $border-radius-lg 0 !important;
+   }
 }
 
 .connectify-info {
