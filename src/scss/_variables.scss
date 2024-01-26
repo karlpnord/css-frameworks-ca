@@ -440,7 +440,7 @@ $position-values: (
 
 $body-text-align:           null;
 $body-color:                $gray-900;
-$body-bg:                   $white;
+$body-bg:                   $secondary;
 
 $body-secondary-color:      rgba($body-color, .75);
 $body-secondary-bg:         $gray-200;
@@ -839,7 +839,7 @@ $btn-font-size-lg:            $input-btn-font-size-lg;
 
 $btn-border-width:            $input-btn-border-width;
 
-$btn-font-weight:             $font-weight-medium;
+$btn-font-weight:             $font-weight-bold;
 $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
 $btn-focus-width:             $input-btn-focus-width;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
@@ -903,7 +903,7 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg;
 $input-padding-x-lg:                    $input-btn-padding-x-lg;
 $input-font-size-lg:                    $input-btn-font-size-lg;
 
-$input-bg:                              var(--#{$prefix}body-bg);
+$input-bg:                              $gray-100;
 $input-disabled-color:                  null;
 $input-disabled-bg:                     var(--#{$prefix}secondary-bg);
 $input-disabled-border-color:           null;
