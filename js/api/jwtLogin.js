@@ -1,28 +1,26 @@
 import { registerError } from "../variables.js";
 
-export async function registerProfile(url, data) {
+export async function loginToProfile(url, userData) {
    try {
       const postData = {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
          },
-         body: JSON.stringify(data),
+         body: JSON.stringify(userData),
       };
-
       const response = await fetch(url, postData);
       console.log(response);
-
       const json = await response.json();
       console.log(json);
 
-      if (response.status === 400) {
+      if (response.status === 401) {
          registerError.style.display = "block";
-      } else if (response.status === 404) {
-         registerError.style.display = "block";
-         registerError.textContent = "Something went wrong, please contact us.";
+         throw new Error("NOT WORKING!");
       } else {
-         window.location.href = "../";
+         const accessToken = json.accessToken;
+         localStorage.setItem("accessToken", accessToken);
+         window.location.href = "/feed/";
          return json;
       }
    } catch (error) {

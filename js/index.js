@@ -1,3 +1,3 @@
-import { registerForm } from "./eventHandlers/registerForm.js";
+import { loginForm } from "./eventHandlers/loginForm.js";
 
-registerForm();
+loginForm();

@@ -11,7 +11,7 @@ export function registerForm() {
       event.preventDefault();
 
       const userData = {
-         username: document.querySelector("#floatingUsername").value,
+         name: document.querySelector("#floatingUsername").value,
          email: document.querySelector("#floatingEmail").value,
          password: document.querySelector("#floatingPassword").value,
       };
