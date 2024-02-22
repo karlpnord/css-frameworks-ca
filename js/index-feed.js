@@ -9,6 +9,5 @@ getPosts(url);
 
 const logOutButton = document.querySelector("#logOutButton");
 logOutButton.onclick = function () {
-   console.log("HALLO");
    logOut();
 };
