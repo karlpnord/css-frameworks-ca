@@ -57,15 +57,21 @@
          <div class="feed-create-info p-2 rounded-3 col-lg-4 h-100 sticky-lg-top shadow">
             <div class="bg-white p-3 rounded-3">
                <h1 class="h3 fw-bold mb-3">Create New Post</h1>
-               <div class="form-floating mb-3">
-                  <textarea class="form-control feed-create-info-post" placeholder="What's on your mind" id="floatingTextarea"></textarea>
-                  <label for="floatingTextarea">What's on your mind?</label>
-                </div>
-                <div class="mb-3">
-                  <i class="fa-regular fa-image fa-xl"></i>
-                  <span class="h6">Image/Video</span>
-                </div>
-                <button class="btn btn-primary px-5">Publish</button>
+               <form id="createPost">
+                  <div class="form-floating">
+                     <input type="text" class="form-control" id="floatingTitle" placeholder="Title" required>
+                     <label for="floatingTitle">Title</label>
+                  </div>
+                  <div class="form-floating mt-3">
+                     <input type="text" class="form-control" id="floatingBody" placeholder="Body" required>
+                     <label for="floatingBody">Body</label>
+                  </div>
+                  <div class="form-floating mt-3">
+                     <input type="text" class="form-control" id="floatingImage" placeholder="Image URL">
+                     <label for="floatingImage">Image URL</label>
+                  </div>
+                  <button class="btn btn-primary px-5 mt-3">Create Post</button>
+               </form>
             </div>
             <div class="p-3 mt-4">
                <h2 class="h3 fw-bold mb-3">Find Posts</h2>
