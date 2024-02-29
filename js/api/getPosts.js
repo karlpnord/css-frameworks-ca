@@ -1,4 +1,5 @@
 import { postHtml } from "../components/postsHtml.js";
+import { searchPosts } from "../components/searchPosts.js";
 
 export async function getPosts(url) {
    try {
@@ -15,6 +16,7 @@ export async function getPosts(url) {
       const json = await response.json();
       console.log(json);
       postHtml(json);
+      searchPosts(json);
    } catch (error) {
       console.log(error);
    }
