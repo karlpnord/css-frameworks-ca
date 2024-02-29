@@ -4,6 +4,7 @@ import { cardSocial } from "./postsSocialSection.js";
 const postsContainer = document.querySelector("#postsContainer");
 
 export function postHtml(posts) {
+   postsContainer.innerHTML = "";
    posts.forEach((post) => {
       const card = createElement(post, "div", "card shadow", false);
       postsContainer.appendChild(card);
