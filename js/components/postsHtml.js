@@ -1,5 +1,4 @@
 import { createElement } from "./createElement.js";
-import { cardSocial } from "./postsSocialSection.js";
 import { defaultImgUrl } from "../variables.js";
 
 const postsContainer = document.querySelector("#postsContainer");
@@ -30,8 +29,5 @@ export function postHtml(posts) {
 
       const line = createElement(post, "hr", "my-1 border-2", false);
       body.appendChild(line);
-
-      const social = cardSocial();
-      body.appendChild(social);
    });
 }
