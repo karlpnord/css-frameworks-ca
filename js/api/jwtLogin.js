@@ -20,6 +20,8 @@ export async function loginToProfile(url, userData) {
       } else {
          const accessToken = json.accessToken;
          localStorage.setItem("accessToken", accessToken);
+         const loggedInUser = json.name;
+         localStorage.setItem("loggedInUser", loggedInUser);
          window.location.href = "/feed/";
          return json;
       }
