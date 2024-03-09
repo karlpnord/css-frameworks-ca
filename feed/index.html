@@ -80,13 +80,14 @@
                   <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
                </div>
                <div class="input-group">
-                  <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                     <option selected>Sort by...</option>
-                     <option value="1">Likes</option>
-                     <option value="2">Newest</option>
-                     <option value="3">Oldest</option>
+                  <select class="form-select" id="filterPosts" aria-label="Example select with button addon">
+                     <option selected value="Standard">Sort by...</option>
+                     <option value="Photograpy">Photography</option>
+                     <option value="Music">Music</option>
+                     <option value="Nature lover">Nature lover</option>
+                     <option value="Sports">Sports</option>
                   </select>
-                  <button class="btn btn-primary" type="button">Search</button>
+                  <button class="btn btn-primary" type="button" id="filterPostsBtn">Search</button>
                </div>
                <button class="d-flex align-items-center gap-1 mt-5 text-black border-0 px-2 bg-white rounded-3" id="logOutButton">
                   <i class="fa-solid fa-circle-user fa-xl"></i>

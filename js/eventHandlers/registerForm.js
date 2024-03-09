@@ -15,8 +15,6 @@ export function registerForm() {
          email: document.querySelector("#floatingEmail").value,
          password: document.querySelector("#floatingPassword").value,
       };
-
-      console.log(userData);
       registerProfile(url, userData);
    });
 }

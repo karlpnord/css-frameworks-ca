@@ -11,10 +11,8 @@ export async function registerProfile(url, data) {
       };
 
       const response = await fetch(url, postData);
-      console.log(response);
 
       const json = await response.json();
-      console.log(json);
 
       if (response.status === 400) {
          registerError.style.display = "block";
@@ -26,7 +24,6 @@ export async function registerProfile(url, data) {
          return json;
       }
    } catch (error) {
-      console.log(error);
       registerError.style.display = "block";
       registerError.textContent = "An error occurred, please try again.";
    }

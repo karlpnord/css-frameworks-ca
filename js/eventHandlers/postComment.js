@@ -8,8 +8,6 @@ export function postComment(id) {
       event.preventDefault();
 
       const comment = document.querySelector("#floatingComment").value;
-
-      console.log(comment);
       commentOnPost(id, comment);
       commentComplete.textContent = "Comment added to post!";
    });
