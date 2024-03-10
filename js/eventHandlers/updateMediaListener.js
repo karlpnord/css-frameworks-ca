@@ -3,9 +3,9 @@ import { getSingleProfile } from "../api/getSingleProfile.js";
 
 export function updateProfileMedia(url, profileUrl) {
    const form = document.querySelector("#updateMediaForm");
-
    form.addEventListener("submit", (event) => {
       event.preventDefault();
+
       const token = localStorage.getItem("accessToken");
 
       const requestOptions = {
