@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="../dist/css/index.css">
    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
    <script src="https://kit.fontawesome.com/801ba823f5.js" crossorigin="anonymous"></script>
-   <script src="../js/index-feed.js" type="module" defer></script>
+   <script src="../js/index-singlePost.js" defer type="module"></script>
 </head>
 <body>
    <header>
@@ -28,13 +28,13 @@
                <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                      <li class="nav-item d-flex align-items-center gap-1">
-                        <a href="#" class="nav-link active p-md-4" aria-current="page" href="#">
+                        <a href="../feed/" class="nav-link p-md-4" aria-current="page">
                            <i class="fa-solid fa-house fa-lg"></i>
                            <span class="mb-0 h5">Home</span>
                         </a>
                      </li>
                      <li class="nav-item d-flex align-items-center gap-1">
-                        <a class="nav-link p-md-4" href="../profile/index.html">
+                        <a class="nav-link p-md-4" href="../profile/">
                            <i class="fa-solid fa-circle-user fa-lg"></i>
                            <span class="mb-0 h5">Profile</span>
                         </a>
@@ -51,83 +51,54 @@
          </div>
       </nav>
    </header>
+   
    <main>
       <div class="row container mx-auto my-5">
          
          <div class="feed-create-info p-2 rounded-3 col-lg-5 h-100 sticky-lg-top shadow">
             <div class="bg-white p-3 rounded-3">
-               <h1 class="h3 fw-bold mb-3">Create New Post</h1>
-               <form id="createPost">
+               <h1 class="h3 fw-bold mb-3">Edit Post</h1>
+               <form id="updatePost">
                   <div class="form-floating">
                      <input type="text" class="form-control" id="floatingTitle" placeholder="Title" required>
                      <label for="floatingTitle">Title</label>
                   </div>
                   <div class="form-floating mt-3">
-                     <input type="text" class="form-control" id="floatingBody" placeholder="Body" required>
+                     <input type="text" class="form-control" id="floatingBody" placeholder="Body">
                      <label for="floatingBody">Body</label>
                   </div>
                   <div class="form-floating mt-3">
                      <input type="text" class="form-control" id="floatingImage" placeholder="Image URL">
                      <label for="floatingImage">Image URL</label>
                   </div>
-                  <button class="btn btn-primary px-5 mt-3">Create Post</button>
+                  <button class="btn btn-primary px-5 mt-3">Update</button>
                </form>
             </div>
-            <div class="p-3 mt-4">
-               <h2 class="h3 fw-bold mb-3">Find Posts</h2>
-               <div class="input-group mb-3">
-                  <input type="text" id="searchInput" class="form-control" placeholder="Search for post" aria-label="Search for post" aria-describedby="button-addon2">
-                  <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
-               </div>
-               <div class="input-group">
-                  <select class="form-select" id="filterPosts" aria-label="Example select with button addon">
-                     <option selected value="Standard">Sort by...</option>
-                     <option value="Photograpy">Photography</option>
-                     <option value="Music">Music</option>
-                     <option value="Nature lover">Nature lover</option>
-                     <option value="Sports">Sports</option>
-                  </select>
-                  <button class="btn btn-primary" type="button" id="filterPostsBtn">Search</button>
-               </div>
-               <button class="d-flex align-items-center gap-1 mt-5 text-black border-0 px-2 bg-white rounded-3" id="logOutButton">
-                  <i class="fa-solid fa-circle-user fa-xl"></i>
-                  <span class="h4 fw-bold mt-2">Log Out</span>
+            <div class="p-3 d-flex gap-5">
+               <button class="d-flex align-items-center gap-1 text-black border-0 px-4 bg-white rounded-3" id="likePostBtn">
+                  <i class="fa-solid fa-thumbs-up fa-xl"></i>
+                  <span class="h4 fw-bold mt-2">Like</span>
+               </button>
+               <button class="d-flex align-items-center gap-1 text-black border-0 px-4 bg-white rounded-3" id="deletePostBtn">
+                  <i class="fa-solid fa-trash fa-xl"></i>
+                  <span class="h4 fw-bold mt-2">Delete</span>
                </button>
             </div>
+            <form class="p-3 commentForm">
+               <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingComment" placeholder="Comment" required>
+                  <label for="floatingComment">Comment</label>
+               </div>
+               <button class="btn btn-primary px-5 mt-3">Post Comment</button>
+               <div class="commentComplete mt-3 fw-medium ps-1"></div>
+            </form>
          </div>
          
          <div class="col-0 col-lg-1"></div>
          
-         <div class="d-flex flex-column justify-content-center gap-7 p-4 bg-white rounded-3 col-lg-6" id="postsContainer"> 
-            
-            <div class="card shadow">
-               <img src="../images/istockphoto-498478219-612x612.jpg" class="card-img-top" alt="...">
-               <div class="card-body">
-                  <h5 class="card-title mt-2">Title</h5>
-                  <p class="card-text pt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <hr class="my-1 border-2"/>
-                  <div class="d-flex flex-column flex-sm-row gap-2 mt-3 justify-content-sm-around">
-                     <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
-                        <i class="fa-regular fa-heart"></i>
-                        <span class="fw-medium">Like</span>
-                     </button>
-                     <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
-                        <i class="fa-solid fa-comment"></i>
-                        <span class="fw-medium">Comments</span>
-                     </button>
-                     <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
-                        <i class="fa-solid fa-share-nodes"></i>
-                        <span class="fw-medium">Share</span>
-                     </button>
-                  </div>
-               </div>
-            </div>
+         <div class="p-4 bg-white rounded-3 col-lg-6" id="postsContainer"></div>
       </div>
    </main>
-
-   <footer>
-      
-   </footer>
 
 </body>
 </html>
