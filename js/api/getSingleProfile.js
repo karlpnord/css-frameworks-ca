@@ -11,11 +11,20 @@ export async function getSingleProfile(url) {
          },
       };
       const response = await fetch(url, getData);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       updateProfile(json);
    } catch (error) {
-      console.log(error);
+      const container = document.querySelector("#profileCard");
+      container.textContent = "";
+      const errorDiv = document.createElement("div");
+      errorDiv.classList.add(
+         "text-danger",
+         "fw-bold",
+         "error-container",
+         "p-2"
+      );
+      errorDiv.textContent =
+         "An error occurred when loading your profile, please try again later!";
+      container.appendChild(errorDiv);
    }
 }

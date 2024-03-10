@@ -1,5 +1,6 @@
 import { postHtml } from "../components/postsHtml.js";
 import { searchPosts } from "../components/searchPosts.js";
+import { filterPostsSelect } from "../components/filterPosts.js";
 
 export async function getPosts(url) {
    try {
@@ -12,12 +13,21 @@ export async function getPosts(url) {
          },
       };
       const response = await fetch(url, getData);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       postHtml(json);
       searchPosts(json);
+      filterPostsSelect(json);
    } catch (error) {
-      console.log(error);
+      const container = document.querySelector("#postsContainer");
+      const errorDiv = document.createElement("div");
+      errorDiv.classList.add(
+         "text-danger",
+         "fw-bold",
+         "error-container",
+         "p-2"
+      );
+      errorDiv.textContent =
+         "An error occurred, could not display posts. Please try again later.";
+      container.appendChild(errorDiv);
    }
 }

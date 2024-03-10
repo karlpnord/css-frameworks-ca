@@ -14,8 +14,6 @@ export function loginForm() {
          email: document.querySelector("#floatingEmail").value,
          password: document.querySelector("#floatingPassword").value,
       };
-
-      console.log(userLoginData);
       loginToProfile(url, userLoginData);
    });
 }

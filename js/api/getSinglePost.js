@@ -11,11 +11,19 @@ export async function getSinglePost(url) {
          },
       };
       const response = await fetch(url, getData);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       singlePostHtml(json);
    } catch (error) {
-      console.log(error);
+      const container = document.querySelector("#postsContainer");
+      const errorDiv = document.createElement("div");
+      errorDiv.classList.add(
+         "text-danger",
+         "fw-bold",
+         "error-container",
+         "p-2"
+      );
+      errorDiv.textContent =
+         "An error occurred, could not display the current post. Please try again later.";
+      container.appendChild(errorDiv);
    }
 }

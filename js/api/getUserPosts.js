@@ -11,11 +11,20 @@ export async function getUserPosts(url) {
          },
       };
       const response = await fetch(url, getData);
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       postHtml(json);
    } catch (error) {
-      console.log(error);
+      const container = document.querySelector("#postsContainer");
+      container.textContent = "";
+      const errorDiv = document.createElement("div");
+      errorDiv.classList.add(
+         "text-danger",
+         "fw-bold",
+         "error-container",
+         "p-2"
+      );
+      errorDiv.textContent =
+         "An error occurred when loading your posts, please try again later!";
+      container.appendChild(errorDiv);
    }
 }
